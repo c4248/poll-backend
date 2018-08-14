@@ -22,7 +22,7 @@ jwt = JWTManager(app)
 
 @app.after_request
 def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
+    response.headers.add('Access-Control-Allow-Origin', 'poll-c4248.firebaseapp.com')
     if request.method == 'OPTIONS':
         response.headers['Access-Control-Allow-Methods'] = 'DELETE, GET, POST, PUT'
         headers = request.headers.get('Access-Control-Request-Headers')
