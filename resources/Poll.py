@@ -24,9 +24,9 @@ class Poll(Resource):
         try: 
             poll.save_to_db()
             for choice in data.choice_list:
-                # if data.admin:
-                #     choice_to_save = ChoiceModel(choice, randint(80,1000), poll.id)
-                # else:
+                if data.admin:
+                    choice_to_save = ChoiceModel(choice, randint(80,1000), poll.id)
+                else:
                 choice_to_save = ChoiceModel(choice, 0, poll.id)
                 choice_to_save.save_to_db()
         except:
