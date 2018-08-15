@@ -4,7 +4,7 @@ class ChoiceModel(db.Model):
     __tablename__ = 'choice'
 
     id = db.Column(db.Integer, primary_key=True)
-    choice = db.Column(db.String(80))
+    choice = db.Column(db.String(220))
     votes = db.Column(db.Integer)
 
     poll_id = db.Column(db.Integer, db.ForeignKey('polls.id'))
